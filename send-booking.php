@@ -153,6 +153,33 @@ try {
     smtp_expect($socket, [250]);
     smtp_command($socket, 'QUIT', [221]);
 } catch (Throwable $e) {
+    error_log('[booking-form][smtp] ' . $e->getMessage());
+
+    $mailFallbackEnabled = (bool)($config['mail_fallback'] ?? true);
+    if ($mailFallbackEnabled && function_exists('mail')) {
+        $fallbackHeaders = [
+            'MIME-Version: 1.0',
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: ' . $config['from_email'],
+            'Reply-To: ' . $email,
+            'X-Mailer: PHP/' . phpversion(),
+        ];
+
+        $mailSent = @mail(
+            $config['to_email'],
+            $subject,
+            $body,
+            implode("\r\n", $fallbackHeaders)
+        );
+
+        if ($mailSent) {
+            fclose($socket);
+            redirect_with_status('sent');
+        }
+
+        error_log('[booking-form][mail-fallback] mail() returned false');
+    }
+
     fclose($socket);
     redirect_with_status('send');
 }

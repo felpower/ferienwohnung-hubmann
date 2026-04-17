@@ -38,6 +38,10 @@ wp-config.php
 # Local mail credentials
 /mail-config.local.php
 
+# Local host backups
+/backup/
+*.zip
+
 # All plugins
 #
 # Note: If you wish to whitelist plugins,
