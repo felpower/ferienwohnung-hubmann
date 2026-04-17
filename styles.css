@@ -110,7 +110,26 @@ h3 {
 }
 
 .hero-nav-cta {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 15px 26px;
+  border: 1px solid var(--ast-border-strong);
+  background: #ffffff;
+  color: var(--ast-text-dark);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.hero-nav-cta:hover,
+.hero-nav-cta:focus {
+  color: var(--ast-accent);
+  background: #ffffff;
+  border-color: var(--ast-accent);
 }
 
 .nav-shell,
@@ -445,6 +464,7 @@ h3 {
   min-width: 220px;
   padding: 15px 26px;
   border: 1px solid rgba(255, 255, 255, 0.92);
+  background: transparent;
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 700;
@@ -805,7 +825,7 @@ h3 {
   padding: 70px 0;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.42) 50%, rgba(0, 0, 0, 0.34) 100%),
-    url("/assets/hubmann/home-hero.jpg") center center / cover no-repeat;
+    url("/assets/hubmann/hero.jpg") 50% 50% / cover no-repeat;
 }
 
 .contact-band-inner {
@@ -854,6 +874,16 @@ h3 {
 
 .site-footer p {
   margin: 0;
+}
+
+.footer-credit a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.footer-credit a:hover,
+.footer-credit a:focus {
+  color: #ffffff;
 }
 
 .site-footer nav {
@@ -924,6 +954,70 @@ body.lightbox-open {
   font-size: 2rem;
   line-height: 1;
   cursor: pointer;
+}
+
+.cookie-banner {
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 260;
+  background: #ffffff;
+  border: 1px solid var(--ast-border-strong);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+.cookie-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 20px;
+}
+
+.cookie-banner p {
+  margin: 0;
+  color: var(--ast-text-dark);
+  line-height: 1.45;
+}
+
+.cookie-banner p a {
+  font-weight: 600;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  border: 1px solid var(--ast-border-strong);
+  background: #ffffff;
+  color: var(--ast-text-dark);
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cookie-btn-primary {
+  border-color: var(--ast-accent);
+  background: var(--ast-accent);
+  color: #ffffff;
+}
+
+.cookie-btn-primary:hover,
+.cookie-btn-primary:focus {
+  border-color: var(--ast-accent-hover);
+  background: var(--ast-accent-hover);
+}
+
+.cookie-btn-secondary:hover,
+.cookie-btn-secondary:focus {
+  border-color: var(--ast-accent);
+  color: var(--ast-accent);
 }
 
 @media (max-width: 960px) {
@@ -1104,6 +1198,26 @@ body.lightbox-open {
 
   .wp-form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cookie-banner {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .cookie-banner-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cookie-banner-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .cookie-btn {
+    width: 100%;
   }
 }
 
