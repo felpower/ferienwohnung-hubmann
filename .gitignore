@@ -37,6 +37,7 @@ wp-config.php
 
 # Local mail credentials
 /mail-config.local.php
+/admin-config.local.php
 
 # Local host backups
 /backup/

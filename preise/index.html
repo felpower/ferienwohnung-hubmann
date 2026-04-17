@@ -59,8 +59,15 @@
                 <tr><th>Personen</th><th>Sommer</th><th>Winter</th></tr>
               </thead>
               <tbody>
-                <tr><td>2 Personen</td><td>€ 100,00</td><td>€ 110,00</td></tr>
-                <tr><td>3-5 Personen</td><td colspan="2">Für jede weitere Person kommen 10€ pro Tag hinzu.</td></tr>
+                <tr>
+                  <td>2 Personen</td>
+                  <td id="price-night-2-summer">€ 100,00</td>
+                  <td id="price-night-2-winter">€ 110,00</td>
+                </tr>
+                <tr>
+                  <td>3-5 Personen</td>
+                  <td id="price-night-extra" colspan="2">Für jede weitere Person kommen 10€ pro Tag hinzu.</td>
+                </tr>
               </tbody>
             </table>
           </article>
@@ -69,13 +76,14 @@
             <h2>Zusatzgebühren</h2>
             <table class="pricing-table">
               <tbody>
-                <tr><td>Endreinigung</td><td>€ 70,00</td></tr>
-                <tr><td>Kurtaxe</td><td>€ 2,10 je Tag und Person ab 17 Jahren.</td></tr>
-                <tr><td>Hunde</td><td>€ 6,00 / Tag</td></tr>
-                <tr><td>Anzahlung</td><td>€ 100,00 nach Buchung</td></tr>
-                <tr><td>Restzahlung</td><td>Überweisung vor Reiseantritt oder bar bei Abreise. Keine Kartenzahlung möglich.</td></tr>
+                <tr><td>Endreinigung</td><td id="price-cleaning">€ 70,00</td></tr>
+                <tr><td>Kurtaxe</td><td id="price-city-tax">€ 2,10 je Tag und Person ab 17 Jahren.</td></tr>
+                <tr><td>Hunde</td><td id="price-dogs">€ 6,00 / Tag</td></tr>
+                <tr><td>Anzahlung</td><td id="price-deposit">€ 100,00 nach Buchung</td></tr>
+                <tr><td>Restzahlung</td><td id="price-balance">Überweisung vor Reiseantritt oder bar bei Abreise. Keine Kartenzahlung möglich.</td></tr>
               </tbody>
             </table>
+            <p class="price-updated is-hidden" data-price-updated></p>
           </article>
         </div>
       </section>
@@ -106,6 +114,7 @@
           <a href="../kontakt/">Kontakt</a>
           <a href="../privacy-policy/">Impressum</a>
           <a href="#" data-cookie-settings>Cookie-Einstellungen</a>
+          <a href="../admin-prices.php" class="admin-link" title="Admin">⚙</a>
         </nav>
       </div>
     </footer>

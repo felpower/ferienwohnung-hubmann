@@ -1,0 +1,17 @@
+{
+    "nightly": {
+        "twoPersons": {
+            "summer": "€ 100,00",
+            "winter": "€ 110,00"
+        },
+        "extraPerson": "Für jede weitere Person kommen 10€ pro Tag hinzu."
+    },
+    "fees": {
+        "cleaning": "€ 70,00",
+        "cityTax": "€ 2,10 je Tag und Person ab 17 Jahren.",
+        "dogs": "€ 6,00 / Tag",
+        "deposit": "€ 100,00 nach Buchung",
+        "balance": "Überweisung vor Reiseantritt oder bar bei Abreise. Keine Kartenzahlung möglich."
+    },
+    "updatedAt": "17.04.2026"
+}

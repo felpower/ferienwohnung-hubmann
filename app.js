@@ -146,6 +146,58 @@ function initConsentAndAnalytics() {
 
 initConsentAndAnalytics();
 
+function setPriceText(id, value) {
+  if (typeof value !== "string") {
+    return;
+  }
+
+  const target = document.getElementById(id);
+  if (target) {
+    target.textContent = value;
+  }
+}
+
+async function initDynamicPrices() {
+  const isPricesPage =
+    window.location.pathname === "/preise/" ||
+    window.location.pathname.endsWith("/preise/index.html") ||
+    document.getElementById("price-night-2-summer") !== null;
+
+  if (!isPricesPage) {
+    return;
+  }
+
+  try {
+    const response = await fetch("/data/prices.json", { cache: "no-store" });
+    if (!response.ok) {
+      return;
+    }
+
+    const prices = await response.json();
+
+    setPriceText("price-night-2-summer", prices?.nightly?.twoPersons?.summer);
+    setPriceText("price-night-2-winter", prices?.nightly?.twoPersons?.winter);
+    setPriceText("price-night-extra", prices?.nightly?.extraPerson);
+
+    setPriceText("price-cleaning", prices?.fees?.cleaning);
+    setPriceText("price-city-tax", prices?.fees?.cityTax);
+    setPriceText("price-dogs", prices?.fees?.dogs);
+    setPriceText("price-deposit", prices?.fees?.deposit);
+    setPriceText("price-balance", prices?.fees?.balance);
+
+    const updatedTarget = document.querySelector("[data-price-updated]");
+    const updatedAt = prices?.updatedAt;
+    if (updatedTarget && typeof updatedAt === "string" && updatedAt.trim() !== "") {
+      updatedTarget.textContent = `Stand: ${updatedAt}`;
+      updatedTarget.classList.remove("is-hidden");
+    }
+  } catch (error) {
+    // Keep static fallback values when JSON loading fails.
+  }
+}
+
+initDynamicPrices();
+
 document.querySelectorAll("[data-cookie-settings]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
