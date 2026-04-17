@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt | Ferienwohnung Hubmann</title>
+    <meta
+      name="description"
+      content="Kontakt zur Ferienwohnung Hubmann in Weißbriach. Telefon, E-Mail und Lage auf der Karte."
+    />
+    <link rel="canonical" href="https://www.ferienwohnung-hubmann.at/kontakt/" />
+    <link rel="icon" href="../assets/hubmann/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="../">
+          <span class="brand-kicker">Ferienwohnung</span>
+          <span class="brand-name">Hubmann</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>
+        <nav id="site-nav" class="site-nav" aria-label="Hauptnavigation">
+          <a href="../">Start</a>
+          <a href="../ferienwohnung/">Ferienwohnung</a>
+          <a href="../preise/">Preise</a>
+          <div class="nav-group">
+            <a class="nav-parent" href="../weisbriach/">Weißbriach</a>
+            <div class="nav-dropdown">
+              <a href="../weisbriach/">Sommer</a>
+              <a href="../winter/">Winter</a>
+            </div>
+          </div>
+          <a href="./" aria-current="page">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="wp-hero">
+        <div class="container wp-hero-inner">
+          <p class="eyebrow">Kontakt</p>
+          <h1>Ihre Buchungsanfrage</h1>
+        </div>
+      </section>
+
+      <section class="wp-section">
+        <div class="container wp-contact-grid">
+          <div class="wp-card">
+            <div class="form-status is-hidden" data-form-status></div>
+            <form id="booking-form" class="wp-form" action="../send-booking.php" method="post">
+              <input class="is-hidden" type="text" name="website" tabindex="-1" autocomplete="off" />
+
+              <div class="wp-form-grid">
+                <label>
+                  Vorname *
+                  <input type="text" name="firstName" required />
+                </label>
+                <label>
+                  Nachname *
+                  <input type="text" name="lastName" required />
+                </label>
+              </div>
+
+              <div class="wp-form-grid">
+                <label>
+                  Email *
+                  <input type="email" name="email" required />
+                </label>
+                <label>
+                  Telefon *
+                  <input type="tel" name="phone" required />
+                </label>
+              </div>
+
+              <div class="wp-form-grid">
+                <label>
+                  Anreise *
+                  <input type="date" name="arrival" required />
+                </label>
+                <label>
+                  Abreise *
+                  <input type="date" name="departure" required />
+                </label>
+              </div>
+
+              <div class="wp-form-grid">
+                <label>
+                  Erwachsene *
+                  <input type="number" name="adults" min="1" required />
+                </label>
+                <label>
+                  Kinder bis 17 Jahre
+                  <input type="number" name="children" min="0" value="0" />
+                </label>
+              </div>
+
+              <label>
+                Hund
+                <select name="dog">
+                  <option value="Nein">Nein</option>
+                  <option value="Ja">Ja</option>
+                </select>
+              </label>
+
+              <label>
+                Wünsche und Anmerkungen
+                <textarea name="notes"></textarea>
+              </label>
+
+              <button class="wp-submit" type="submit">Jetzt anfragen!</button>
+              <p class="wp-note">Die Anfrage wird direkt an info@ferienwohnung-hubmann.at gesendet.</p>
+            </form>
+          </div>
+
+          <div class="wp-card">
+            <h2>Kontakt</h2>
+            <p>
+              Andrea und Adi Hubmann<br />
+              9622 Weißbriach 150
+            </p>
+            <p><strong>FRAGEN SIE JETZT UNVERBINDLICH AN</strong></p>
+            <p>
+              <a href="tel:+436506061454">+43/650/6061454</a><br />
+              <a href="mailto:info@ferienwohnung-hubmann.at">info@ferienwohnung-hubmann.at</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="wp-section">
+        <div class="container">
+          <iframe
+            class="map-frame"
+            loading="lazy"
+            src="https://maps.google.com/maps?q=9622%20Wei%C3%9Fbriach%20150&t=m&z=15&output=embed"
+            title="Karte zu 9622 Weißbriach 150"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="contact-band">
+        <div class="container contact-band-inner">
+          <div>
+            <h2>Kontakt</h2>
+            <p>Andrea und Adi Hubmann<br />9622 Weißbriach 150</p>
+            <p><strong>FRAGEN SIE JETZT UNVERBINDLICH AN</strong></p>
+            <p>
+              <a href="tel:+436506061454">+43/650/6061454</a><br />
+              <a href="mailto:info@ferienwohnung-hubmann.at">info@ferienwohnung-hubmann.at</a>
+            </p>
+          </div>
+          <div class="contact-band-action">
+            <a class="button button-primary" href="#booking-form">Jetzt anfragen</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-shell">
+        <p>© 2026 Ferienwohnung Hubmann</p>
+        <nav aria-label="Footer">
+          <a href="../">Start</a>
+          <a href="./">Kontakt</a>
+          <a href="../privacy-policy/">Impressum</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../app.js"></script>
+  </body>
+</html>

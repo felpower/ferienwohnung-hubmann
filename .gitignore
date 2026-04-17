@@ -35,6 +35,9 @@ wp-config.php
 # htaccess
 /.htaccess
 
+# Local mail credentials
+/mail-config.local.php
+
 # All plugins
 #
 # Note: If you wish to whitelist plugins,
