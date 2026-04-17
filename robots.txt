@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+Disallow: /admin-prices.php
+Disallow: /admin-config.local.php
+
 Sitemap: https://www.ferienwohnung-hubmann.at/sitemap.xml

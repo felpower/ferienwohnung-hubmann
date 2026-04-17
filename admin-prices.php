@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 session_start();
+header('X-Robots-Tag: noindex, nofollow', true);
 
 $configPath = __DIR__ . '/admin-config.local.php';
 if (!is_file($configPath)) {
