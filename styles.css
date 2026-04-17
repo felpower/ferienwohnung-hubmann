@@ -236,9 +236,60 @@ h3 {
 }
 
 .wp-hero,
-.page-hero,
-.hero {
-  padding: 56px 0 44px;
+.page-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(180px, 22vw, 280px);
+  padding: 0;
+  background:
+    linear-gradient(180deg, rgba(16, 52, 47, 0.28) 0%, rgba(16, 52, 47, 0.52) 100%),
+    var(--page-hero-image, url("./assets/hubmann/home-hero.jpg")) center center / cover no-repeat;
+  color: #ffffff;
+}
+
+.wp-hero-inner,
+.page-hero-inner {
+  width: 100%;
+  padding: 42px 0 40px;
+  text-align: center;
+}
+
+.wp-hero-inner .eyebrow,
+.page-hero-inner .eyebrow {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.wp-hero-inner h1,
+.page-hero-inner h1,
+.wp-hero-inner p,
+.page-hero-inner p {
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+}
+
+.wp-hero-inner .lead,
+.page-hero-inner .lead {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 961px) {
+  body:not(.home-page) .nav-shell {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    justify-content: initial;
+  }
+
+  body:not(.home-page) .nav-shell .brand {
+    justify-self: start;
+  }
+
+  body:not(.home-page) .nav-shell .site-nav {
+    justify-self: center;
+  }
 }
 
 .home-hero {
@@ -294,7 +345,7 @@ h3 {
   right: 0;
   bottom: 18px;
   margin: 0;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(0, 0, 0, 0.95);
   font-size: 0.9rem;
   text-align: center;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
@@ -437,10 +488,6 @@ h3 {
   color: #111111;
 }
 
-.wp-hero-inner {
-  max-width: 760px;
-}
-
 .wp-columns-2,
 .page-hero-grid,
 .hero-grid,
@@ -453,6 +500,14 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 38px;
   align-items: start;
+}
+
+.contact-page .wp-contact-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.contact-page .wp-card {
+  width: 100%;
 }
 
 .wp-columns-3,
@@ -634,6 +689,7 @@ h3 {
 
 .pricing-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
 }
 
@@ -643,6 +699,18 @@ h3 {
   border-bottom: 1px solid var(--ast-border);
   text-align: left;
   vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.pricing-table th:first-child,
+.pricing-table td:first-child {
+  width: 44%;
+  padding-right: 18px;
+}
+
+.pricing-table th:last-child,
+.pricing-table td:last-child {
+  width: auto;
 }
 
 .pricing-table th {
@@ -1053,14 +1121,21 @@ body.lightbox-open {
     min-height: 74px;
   }
 
-  .wp-hero,
-  .page-hero,
-  .hero,
   .home-hero,
   .wp-section,
   .section {
     padding-top: 24px;
     padding-bottom: 34px;
+  }
+
+  .wp-hero,
+  .page-hero {
+    min-height: 180px;
+  }
+
+  .wp-hero-inner,
+  .page-hero-inner {
+    padding: 28px 0 30px;
   }
 
   .home-hero > .container {
